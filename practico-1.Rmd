@@ -77,7 +77,7 @@ En palabras más simples, la distribución conjunta corresponde a la probabilida
 
 ![](images/tabla02.png){width="489"}
 
-Las casillas en color rosado nos muestra la distribución marginal del gasto en vestimenta.
+Las casillas en color rosado nos muestra la *distribución marginal* del gasto en vestimenta.
 
 ### 2.2 Distribución Marginal
 
@@ -95,9 +95,11 @@ La **media** es de 2777.5 y la **desviación estándar** es de 1739.
 
 ### 2.3 Distribución Condicional
 
-Para hallar la **distribución condicional** de la variable fila con relación a un valor determinado de la variable columna, fíjate sólo en esa columna de la tabla. Expresa cada valor de la columna como un porcentaje del total de la columna. Existe una distribución condicional de la variable fila para cada columna de la tabla. La comparación de estas distribuciones condicionales es una manera de mostrar la asociación entre la variable fila y la variable columna. Es especialmente útil cuando la variable columna es la variable explicativa.
+En otras ocasiones, es posible que nos interese el *efecto* que tiene cierta variable sobre otra. Es decir, el efecto que podría tener una variable Y sobre una variable X. Para poder acercarnos a esto recurrimos a la **distribución condicional**, cuya información se encuentra resumida en la *función de densidad de probabilidad condicional*. 
 
-Una **característica importante** de las distribuciones condicionales es que, si $$X$\$ y $$Y\$\$ son variables aleatorias independientes, conocer el valor que toma \$$X$\$ no dice nada acerca de la probabilidad de que Y tome diversos valores (y viceversa).
+Para hallar la distribución condicional de la variable fila con relación a un valor determinado de la variable columna, fíjate sólo en esa columna de la tabla. Expresa cada valor de la columna como un porcentaje del total de la columna. Existe una distribución condicional de la variable fila para cada columna de la tabla. La comparación de estas distribuciones condicionales es una manera de mostrar la asociación entre la variable fila y la variable columna. Es especialmente útil cuando la variable columna es la variable explicativa.
+
+Una característica importante de las distribuciones condicionales es que, si X y Y son variables aleatorias independientes, conocer el valor que toma X no dice nada acerca de la probabilidad de que Y tome diversos valores (y viceversa). Por ejemplo, si queremos conocer el impacto que tiene el ingreso en el gasto en vestimenta, no nos interesa realmente la variable ingreso como tal, solo su aporte al gasto en vestimenta. Si estas dos variables son independientes (propiedad que revisaremos más adelante), conocer el gasto en vestimenta no nos dirá nada acerca de los valores que podrían tomar los ingresos.
 
 ***Tabla 6: Distribución Condicional del Gasto en Vestimenta***
 
@@ -107,9 +109,11 @@ La media condicional para la fila amarilla es de 1815, para la fila verde de 194
 
 ### 2.4. Media condicional
 
-Tal como ya veremos más adelante, la covarianza y correlación miden la relación lineal entre dos VA tratándolas simétricamente, pero en las ciencias sociales es frecuente que se desee explicar una variable $Y$ en términos de otra, $X$. Ya antes revisamos el concepto de una función de densidad de probabilidad condicional de $$Y$\$ dada $$X\$\$. Suponga que se quiere ver cómo cambia la distribución de los salarios con base en el nivel de educación. Sin embargo, por lo general se quiere encontrar una manera sencilla de resumir esta distribución. En este caso, un solo número no podrá ser suficiente, ya que la distribución de $$Y$\$ dado $$X=x\$\$ depende, por lo general, del valor de $$x$\$. No obstante, la relación entre $$Y\$\$ y $$X$\$ puede resumirse empleando la **esperanza (o media) condicional** de $$Y$$ dado $$X\$\$.
+Una manera sencilla de resumir la distribución condicional entre dos variables corresponde a la **esperanza o media condicional**. Esta corresponde al valor esperado de una variable aleatoria respecto a una distribución de probabilidad condicional. Pero, *¿qué es el valor esperado?*
 
-***Tabla 7: Media y media condicional***
+El valor esperado, o esperanza, corresponde a al promedio ponderado de todos los posibles valores de una variable aleatoria X. Este se denota $E(X)$, $μX$ o $μ$. Ahondaremos sobre la esperanza más adelante.
+
+***Tabla 7: Media vs media condicional***
 
 ![](images/tabla06.png){width="440"}
 
@@ -117,7 +121,7 @@ Tal como ya veremos más adelante, la covarianza y correlación miden la relaci�
 
 ### 2.5. Independencia
 
-La independencia de variables aleatorias es un concepto muy importante. Decimos que $$X$\$ e $$Y\$\$ son independientes si conocer el valor de una de las variables no aporta información sobre la otra. En otras palabras, si la **distribución condicional** de $$Y$\$ dado $$X\$\$ es igual a la **distribución marginal** de \$$Y$\$. Por ejemplo, si lanzamos una moneda y en el primer intento da cara, luego en el segundo lanzamiento vuelve a dar cara, decimos que los sucesos "cara en el primer lanzamiento" y "cara en el segundo lanzamiento" son **independientes.** Estosignifica que el resultado del primer lanzamiento no puede influir sobre el del segundo.
+La independencia de variables aleatorias es un concepto muy importante. Decimos que X e Y son independientes si conocer el valor de una de las variables no aporta información sobre la otra. En otras palabras, si la **distribución condicional** de Y dado X es igual a la **distribución marginal** de Y. Por ejemplo, si lanzamos una moneda y en el primer intento da cara, luego en el segundo lanzamiento vuelve a dar cara, decimos que los sucesos "cara en el primer lanzamiento" y "cara en el segundo lanzamiento" son **independientes.** Esto significa que el resultado del primer lanzamiento no puede influir sobre el del segundo.
 
 Formalmente,
 
@@ -133,10 +137,29 @@ $$
 
 ## 3. Características de las distribuciones de probabilidad
 
-### 3.1 Medidas de Tendencia Central: Media Aritmética
+### 3.1 Medidas de Tendencia Central: Valor esperado o esperanza
 
-El **valor esperado** es uno de los conceptos más importantes de la probabilidad al cual también se le suele llamar media poblacional, en especial cuando se quiere hacer énfasis en que $$X$\$ representa una variable poblacional. Es un **promedio ponderado** de todos los posibles valores de $$X\$\$, es decir, la suma de **todas** las **puntuaciones** de una variable \$$X$\$ **dividida por** el **número** de **observaciones.** 
+El **valor esperado** o la **esperanza** es uno de los conceptos más importantes de la probabilidad al cual también se le suele llamar media poblacional, en especial cuando se quiere hacer énfasis en que representa una variable poblacional (contenido que revisaremos en el siguiente práctico). Es un **promedio ponderado** de todos los posibles valores de X, es decir, la suma de **todas** las puntuaciones de una variable X dividida por el número de observaciones. 
 
+Para manipular los valores esperados, existen ciertas reglas que denominaremos como propiedades. A continuación se exponen las más importantes: 
+
+1. **Propiedad 1:** Para cualquier constante $c$ (es decir, cualquier variable que no depende de ninguna otra), su valor esperado será el valor de la misma constante. Matemáticamente: 
+
+$$E(c) = c$$
+Recordar que como una constante no depende de ninguna otra variable, su valor es siempre el mismo.
+
+2. **Propiedad 2:** Para cualquier par de constantes *a* y *b*, el valor esperado de la recta $aX + b$ será igual a: 
+
+$$E(aX + b) = aE(X) + b$$
+Asimismo, 
+
+$$E(aX) = aE(X)$$
+
+Esta propiedad es muy importante al momento de interpretar los resultados de una **regresión**, lo que veremos más adelante. 
+
+3. **Propiedad 3:** Si tenemos un conjunto de constantes *a* y un conjunto de variables aleatorias *X*, entonces se puede expresar que el valor esperado de una suma es la suma de los valores esperados. Esto es: 
+
+$$E(a_1X_1 + a_2X_2 + ... +a_nX_n) = a_1E(X_1) + a_2E(X_2) + ... + a_nE(X_n)$$
 ### 3.2 Medidas de tendencia central: Mediana
 
 En general, es la puntuación que se encuentra en la mitad de una distribución de puntuaciones x. Indica el valor bajo el cual se encuentra el 50% de los casos. Su cálculo sólo exige orden en las puntuaciones, se puede aplicar a variables de escalares y ordinales. Es el **valor** que se ubica en la **mitad** de la distribución de los datos.
@@ -145,7 +168,7 @@ Si $$X$\$ es continua, entonces la mediana de $$X\$\$, llámese m, es el valor t
 
 ### 3.3 Medidas de tendencia central: Moda
 
-El **atributo** que más se repite o posee **mayor frecuencia** en una muestra.
+El **atributo** que más se repite o posee **mayor frecuencia** en una muestra.
 
 ### 3.4 Medidas de Variabilidad o Dispersión: Varianza
 
