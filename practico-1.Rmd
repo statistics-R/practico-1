@@ -1,12 +1,13 @@
 ---
 title: "Práctico N°1"
-date: "10-03-2023"
 output: html_document
 ---
 
 ## 0. Objetivo del práctico
 
-El objetivo de este práctico es realizar un breve repaso a ciertos conceptos clave y definiciones básicas de la **Estadística Inferencial**, específicamente, los relacionados a los fundamentos de la probabilidad. Recordar que la idea principal que se encuentra a la base de la probabilidad refiere a que cuando observamos el comportamiento del azar este resulta impredecible con pocas repeticiones pero presenta un **comportamiento regular y predecible** con muchas repeticiones.
+El objetivo de este práctico es realizar un breve repaso a ciertos conceptos clave y definiciones básicas de los **fundamentos de probabilidad**, pasando por la definición de una variable, sus distribuciones, y las formas de medirlas y/o resumirlas.
+
+Recordar que la idea principal que se encuentra a la base de la probabilidad refiere a que cuando observamos el comportamiento del azar, este resulta impredecible con pocas repeticiones pero presenta un **comportamiento regular y predecible** con muchas repeticiones.
 
 ### Materiales de la sesión
 
@@ -14,28 +15,37 @@ Recuerden que los archivos asociados a este práctico los pueden encontrar en: A
 
 ## 1. Variables aleatorias y sus distribuciones de probabilidad
 
-Las Variables Aleatorias (VA) son **variables estadísticas** en la que sus valores se obtienen a partir del resultado de algún tipo de experimento. En otras palabras, son variables cuyos valores son **resultados numéricos** de un fenómeno aleatorio. Estas **se dividen en discretas o continuas**.
+Las Variables Aleatorias (VA) son **variables estadísticas** en la que sus valores se obtienen a partir del resultado de algún tipo de experimento. En otras palabras, son variables cuyos valores son **resultados numéricos** de un fenómeno aleatorio. Un ejemplo de experimento puede ser algo tan simple como lanzar una moneda 20 veces y anotar las veces que obtenemos cara. La cantidad de veces que efectivamente salió cara en el experimento constituye una variable aleatoria. Este experimento puede ser realizado infinitas veces, y en otro ensayo se puede obtener un resultado completamente distinto.
 
-Las **VA discretas (VAD)** se describen estadísticamente por su **distribución de probabilidad**. La distribución de probabilidad de una variable aleatoria nos dice qué valores puede tomar $X$ y cómo asignar probabilidades a estos valores, es decir, nos entrega un listado de todos los valores posibles que puede tomar una VA y la probabilidad de ocurrencia de cada valor. La suma es igual a 1.
+Las variables aleatorias se dividen en *discretas* y *continuas*. Una **variable aleatoria discreta** es una variable que solo toma una cantidad finita o una cantidad infinita contable de valores. *¿Qué significa esto?* Significa que aunque la variable pueda tener resultados infinitos, estos solo toman valores enteros positivos. Por ejemplo, si lanzamos un dado y anotamos el resultado, solo podemos tener valores del 1 al 6. En ningún caso tendremos un resultado negativo o con decimales. 
 
-Las variables aleatorias discretas se pueden representar en tablas o cuadros:
+En ciertas ocasiones, estimaremos eventos que son cualitativos. Por ejemplo, nos interesa estimar la participación de los alumnos de enseñanza media en manifestaciones del estallido social. En ese caso, la variable también toma valores numéricos. Se puede definir la variable como: *X = 1* si se participa en la manifestación, *X = 0* si no se participa. En esta situación, como podrán notar, nos enfrentamos a una variable aleatoria discreta. Además, cuando una variable **solo** puede tomar los valores de 0 y 1, hablamos de una **variable binaria**.
 
+Las variables aleatorias discretas se describen estadísticamente por su *distribución de probabilidad.* Esta corresponde a la probabilidad de la ocurrencia de cada valor de la variable. Siguiendo con el ejemplo del lanzamiento de un dado, su distribución de probabilidad consiste en todos los valores que puede tomar la variable (1 al 6) y la probabilidad de obtener cada una de ellas (en este caso, cada valor tiene una probabilidad de 1/6). La suma de la distribución de probabilidad es igual a 1.
 
-***Gráfico 1: Distribución de Probabilidad (en porcentaje)***
+Las variables aleatorias discretas se pueden representar en tablas o cuadros. Por ejemplo, si la variable corresponde a la cantidad de hijos: 
+
+**Tabla 1: Distribución de Probabilidad Variable Cantidad de Hijos**
+
+![](images/tabla00.png){width="529"}
+
+**Gráfico 1: Distribución de Probabilidad Variable Cantidad de Hijos (en porcentaje)**
 
 ![](images/grafico01.png){width="549"}
 
-Al igual que la Distribución de Probabilidad, la Distribución de Probabilidad Acumulada (FDA) se puede representar en tablas o gráficos:
+Además de la distribución de probabilidad, también existe la **distribución de probabilidad acumulada**, la cual determina la probabilidad de que una variable sea igual o menor a un valor concreto. Siguiendo con la variable cantidad de hijos:
+
+**Tabla 2: Distribución de Probabilidad Variable Cantidad de Hijos**
+
+![](images/tabla001.png){width="529"}
 
 ***Gráfico 2: Distribución de Probabilidad Acumulada (en porcentaje)***
 
 ![](images/grafico02-01.png){width="529"}
 
-Las **VA continuas (VAC)** indican que $X$ puede tomar ciertos valores con probabilidad cero, es decir, una variable $X$ es una variable aleatoria continua si la probabilidad de que la variable aleatoria tome cualquier valor real sea igual a cero. Estas se describen por medio de su **función de densidad de probabilidad (fda)** de $X$ la cual resume la información concerniente a los valores que puede tomar $X$ y a sus correspondientes probabilidades. Si $X$ es cualquier variable aleatoria, entonces para cualquier número real *x* su fda está definida por:
+Por su parte, las **VA continuas (VAC)** indican que X puede tomar ciertos valores con probabilidad cero, es decir, una variable $X$ es una variable aleatoria continua si la probabilidad de que la variable aleatoria tome cualquier valor real sea igual a cero. *¿Cómo es posible esto?* La idea es que los valores que puede tomar una variable aleatoria continua son tantos que es imposible contarlos. Es por esto que la probabilidad de que la variable tome cada uno de estos valores es cero.
 
-$$
-F(x) \equiv P(X \leq x)
-$$
+Estas se describen por medio de su **función de densidad de probabilidad (fdp)**, la cual resume la información concerniente a los valores que puede tomar $X$ y a sus correspondientes probabilidades. La fdp de una variable continua solo se utiliza para calcular eventos que comprenden un *rango* de valores. Un ejemplo de una variable continua donde nos podría interesar su rango de valores consiste en los ingresos de un hogar.
 
 ***Gráfico 3: Función de Densidad de Probabilidad***
 
@@ -47,19 +57,21 @@ $$
 Pr(-2\leq X \leq 1)
 $$
 
-se encuentra representada por el área debajo de la curva. Para todas las distribuciones continuas importantes en la probabilidad y en la estadística, las funciones de distribución acumulada ya han sido tabuladas, y la más conocida de estas es la **distribución normal.**
+se encuentra representada por el área debajo de la curva. Es decir, la probabilidad de que X se encuentre entre -2 y 1 es el *área bajo la curva* entre esos puntos en el gráfico. Como resume probabilidades, toda el área bajo la curva de la fdp debe ser igual a uno.
+
+Para todas las distribuciones continuas importantes en la probabilidad y en la estadística, las funciones de distribución acumulada ya han sido tabuladas, y la más conocida de estas es la **distribución normal**, la cual tendrá un rol fundamental a lo largo del curso.
 
 ## 2. Distribuciones conjuntas, condicionales, marginales e independencia
 
 ### 2.1 Distribución Conjunta
 
-En muchos casos, resulta interesante estudiar de manera conjunta el comportamiento de las variables. En dichos caso, se construye lo que se denomina **distribución conjunta**. Su objetivo consiste en determinar cómo la variación de una variable se relaciona con la de otra. En el caso de que  $(X,Y)$ sean variables aleatorias discretas, entonces $(X,Y)$ tienen una distribución conjunta, descrita completamente por la **función de densidad de probabilidad conjunta** de $(X,Y)$
+En muchos casos, resulta interesante estudiar de manera conjunta el comportamiento de las variables. En dichos caso, se construye lo que se denomina **distribución conjunta**. Su objetivo consiste en determinar cómo la variación de una variable se relaciona con la de otra. En el caso de que  $(X,Y)$ sean variables aleatorias discretas, entonces $(X,Y)$ tienen una distribución conjunta, descrita completamente por la **función de densidad de probabilidad conjunta** de $(X,Y)$.
+
+En palabras más simples, la distribución conjunta corresponde a la probabilidad de que ocurran dos o más variables aleatorias, al mismo tiempo. Un ejemplo de estudio puede ser la relación entre ingreso y el gasto en vestimentas en un mes.
 
 ***Tabla 3: Distribución Conjunta del Gasto en Vestimenta***
 
 ![](images/tabla01.png){width="506"}
-
-¿Distribución del gasto para [cualquier]{.ul} nivel de ingreso? o ¿Distribución del gasto para [cada]{.ul} nivel de ingreso?
 
 ***Tabla 4: Distribución Marginal del Gasto en Vestimenta***
 
