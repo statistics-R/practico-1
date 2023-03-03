@@ -217,39 +217,51 @@ Cuando a todos los valores de una variable aleatoria se le suma un número, la d
 
 ### 4.1 Covarianza
 
-En el primer apartado, introducimos el concepto de probabilidad conjunta, cuando dos VA pueden tomar simultáneamente ciertos valores concretos. La **covarianza** refleja la **relación lineal** de 2 VA, es decir, de $$X$\$ e $$Y\$\$. Es una medida de dependencia lineal entre dos variables y si es positiva indica que las dos variables aleatorias se mueven en la misma dirección, mientras que si es negativa indica que las dos variables se mueven en direcciones opuestas. Finalmente, al ser una medida de cómo están relacionadas dos variables, cabe preguntarse por la relación entre la covarianza y el concepto de independencia.
+En el primer apartado, introducimos el concepto de probabilidad conjunta, cuando dos VA pueden tomar simultáneamente ciertos valores concretos. A pesar de esto, es útil tener una medida resumida del promedio de la variación de estas dos variables aleatorias, unas respecto a la otra. 
+
+La **covarianza** refleja la **relación lineal** de dos variables aleatorias. Es una medida de dependencia lineal entre dos variables y si es positiva indica que las dos variables aleatorias se mueven en la misma dirección, mientras que si es negativa indica que las dos variables se mueven en direcciones opuestas. 
 
 Formalmente,
 
 $$
-cov(X,Y)=E[(X-\mu_x)(Y-\mu_y)]= \sigma_{xy} 
+Cov(X,Y)=E[(X-\mu_x)(Y-\mu_y)]= \sigma_{xy} 
 $$
 
-Su interpretación es la siguiente:
+Dos propiedades importantes de la covarianza son las siguientes: 
 
--   Si $$X$$ tiende a ser mayor que su media cuando Y está por encima de su media y viceversa, entonces la covarianza entre $$X$$ e $$Y$$ es positiva.
+1. **Propiedad 1**: Si X e Y son independientes, entonces su covarianza es 0. 
 
--   Por el contrario, si se mueven en direcciones opuestas, la covarianza es negativa.
+Es importante recalcar que el inverso **no** es verdad: cero covarianza entre X e Y no implica que X e Y sean independientes. Esto solo implica que no existe una relación *lineal* entre ellas. 
 
--   Si $$X$$ e \$$Y$\$ son independientes, entonces la covarianza es cero.
+2. **Propiedad 2**: Para todas las constantes $a_1, b_1, a_2$ y $b_2$, 
+
+$$Cov(a_1X + b_1, a_2Y + b_2) = a_1a_2Cov(X, Y) $$
+De esto se desprende que la covarianza entre dos variables aleatorias puede alterarse simplemente multiplicando una o las dos variables por una constante. 
 
 ### 4.2 Correlación
 
-La covarianza es difícil de interpretar debido al "problema de las unidades de medida". La correlación es una **medida alternativa** que resuelve este problema.
-
-La **correlación** mide la fuerza y la dirección de la relación lineal entre dos variables cuantitativas. La correlación se simboliza con la letra $$r$$.
+Como vimos en la segunda propiedad de la covarianza, esta se altera fácilmente al multiplicarla por cualquier constante. Por ejemplo, si queremos calcular la covarianza entre ingresos y cantidad de educación, esta dependerá si ingresos se mide en dólares, miles de dólares, miles de pesos, etc. Asimismo, dependerá también si cantidad de educación se mide en años o meses. Esta deficiencia se supera mediante el **coeficiente de correlación**, lo que facilita la interpretación de resultados. 
 
 Formalmente,
 
-\$\$ corr(X,Y)=\frac{cov(X,Y)}{\sqrt{var(X)var(Y)}}=\frac{\sigma_{xy}}{\sigma_{x}\sigma_{y}}
+$$ corr(X,Y)=\frac{cov(X,Y)}{\sqrt{var(X)var(Y)}}=\frac{\sigma_{xy}}{\sigma_{x}\sigma_{y}}$$
+Si X e Y son independientes, entonces su correlación es igual a 0. Pero la correlación cero no implica independencia, solo significa que no existe una relación lineal entre las variables. 
 
-\$\$
+Dos propiedades importantes de la correlación son:
 
-donde
+1. **Propiedad 1**: $-1\leq corr(X,Y) \leq1 $
 
-$$
--1\leq corr(X,Y) \leq1
-$$
+Esto significa que los valores del coeficiente de correlación van desde -1 a 1. Si $Corr(X, Y) = 0$, se dice que X e Y son variables aleatorias no correlacionadas. De lo contrario, están correlacionadas. 
+
+$Corr(X, Y) = 1$ implica una relación lineal positiva perfecta, mientras $Corr(X, Y) = -1$ implica una relación lineal negativa perfecta. Rara vez se obtienen estos valores, pero mientras más cerca esté la correlación del 1 o el -1, más fuerte es la relación lineal. 
+
+2. **Propiedad 2**: Para todas las constantes $a_1, b_1, a_2$ y $b_2$, con $a_1, a_2 > 0$:
+
+$$Corr(a_1X + b, a_2Y + b_2) = Corr(X, Y)$$
+Con $a_1, a_2 < 0$: 
+
+$$Corr(a_1X + b, a_2Y + b_2) = - Corr(X, Y)$$
+Esto significa que, al multiplicar las variables por una constante, la correlación no sufre cambios. Por ejemplo, tenemos que la correlación entre cantidad de educación e ingresos es 0.15. Este resultado no cambia, es independiente si los ingresos se miden en dólares o millones de pesos, o si la educación se mida en años, meses o semestres.
 
 ***Gráfico 5: Tipos de correlaciones***
 
